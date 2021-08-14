@@ -17,5 +17,7 @@ figure_iterations_alternative.m
 figure_iterations_populationsize.m
 figure_iterations_theta.m
 
+The remaining functions and scripts are required for the good working of the scripts described in this file. The working of each of them is described in the header of the function.
+
 
 
