@@ -115,11 +115,14 @@ timestheinteractions=[1 2 5 10 30 50]; % how many times the social interactiosn 
          
          coop_to_print2=cooperation_levels_mean(index_to_print2);
          coop_to_print3=cooperation_levels_mean(index_to_print3);
+         stdcoop_to_print2=cooperation_levels_std(index_to_print2);
+         stdcoop_to_print3=cooperation_levels_std(index_to_print3);
+         
          
          figure(numfig)
-         plot(timestheinteractions,coop_to_print2,'k','LineWidth',3); %,cooperation_levels_std(1,:)
+         errorbar(timestheinteractions,coop_to_print2,stdcoop_to_print2,'ko-','LineWidth',3); %,cooperation_levels_std(1,:)
          hold on
-         plot(timestheinteractions,coop_to_print3,'b','LineWidth',3); %,cooperation_levels_std(3,:)
+         errorbar(timestheinteractions,coop_to_print3,stdcoop_to_print2,'bo-','LineWidth',3); %,cooperation_levels_std(3,:)
          hold on
          ax = gca; % current axes
          ax.FontSize = 14;

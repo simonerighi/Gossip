@@ -143,15 +143,19 @@ for i=1:length(gossippartnertypes_num)
         coop_to_print3_0=cooperation_levels_mean(index_to_print3_0);
         coop_to_print2_1=cooperation_levels_mean(index_to_print2_1);
         coop_to_print3_1=cooperation_levels_mean(index_to_print3_1);
+        stdcoop_to_print2_0=cooperation_levels_std(index_to_print2_0);
+        stdcoop_to_print3_0=cooperation_levels_std(index_to_print3_0);
+        stdcoop_to_print2_1=cooperation_levels_std(index_to_print2_1);
+        stdcoop_to_print3_1=cooperation_levels_std(index_to_print3_1);
         
         figure(numfig)
-        plot(timestheinteractions,coop_to_print2_0,'k','LineWidth',3); %,cooperation_levels_std(1,:)
+        errorbar(timestheinteractions,coop_to_print2_0,stdcoop_to_print2_0,'ko-','LineWidth',3); %,cooperation_levels_std(1,:)
         hold on
-        plot(timestheinteractions,coop_to_print3_0,'b','LineWidth',3); %,cooperation_levels_std(3,:)
+        errorbar(timestheinteractions,coop_to_print3_0,stdcoop_to_print2_0,'bo-','LineWidth',3); %,cooperation_levels_std(3,:)
         hold on
-        plot(timestheinteractions,coop_to_print2_1,'r','LineWidth',3); % ,cooperation_levels_std(2,:)
+        errorbar(timestheinteractions,coop_to_print2_1,stdcoop_to_print2_0,'ro-','LineWidth',3); % ,cooperation_levels_std(2,:)
         hold on
-        plot(timestheinteractions,coop_to_print2_1,'g','LineWidth',3); %,cooperation_levels_std(4,:)
+        errorbar(timestheinteractions,coop_to_print2_1,stdcoop_to_print2_0,'go-','LineWidth',3); %,cooperation_levels_std(4,:)
         
         ax = gca; % current axes
         ax.FontSize = 14;
@@ -214,19 +218,20 @@ for i=1:length(gossippartnertypes_num)
         
         
         figure(numfig)
-        semilogx(memory,average_cooperation(toprint1),'k','LineWidth',3); %,cooperation_levels_std(1,:)
+        errorbar(memory,average_cooperation(toprint1),std_cooperation(toprint1),'ko-','LineWidth',3); %,cooperation_levels_std(1,:)
         hold on
-        semilogx(memory,average_cooperation(toprint2),'b','LineWidth',3); % ,cooperation_levels_std(2,:)
+        errorbar(memory,average_cooperation(toprint2),std_cooperation(toprint2),'bo-','LineWidth',3); % ,cooperation_levels_std(2,:)
         hold on
-        semilogx(memory,average_cooperation(toprint3),'r','LineWidth',3); %,cooperation_levels_std(3,:)
+        errorbar(memory,average_cooperation(toprint3),std_cooperation(toprint3),'ro-','LineWidth',3); %,cooperation_levels_std(3,:)
         hold on
-        semilogx(memory,average_cooperation(toprint4),'m','LineWidth',3); %,cooperation_levels_std(4,:)
+        errorbar(memory,average_cooperation(toprint4),std_cooperation(toprint4),'mo-','LineWidth',3); %,cooperation_levels_std(4,:)
         hold on
-        semilogx(memory,average_cooperation(toprint5),'g','LineWidth',3); %,cooperation_levels_std(4,:)
+        errorbar(memory,average_cooperation(toprint5),std_cooperation(toprint5),'go-','LineWidth',3); %,cooperation_levels_std(4,:)
         hold on
-        semilogx(memory,average_cooperation(toprint6),'k-.','LineWidth',3); %,cooperation_levels_std(4,:)
+        errorbar(memory,average_cooperation(toprint6),std_cooperation(toprint6),'ko-.','LineWidth',3); %,cooperation_levels_std(4,:)
         ax = gca; % current axes
         ax.FontSize = 14;
+        set(gca, 'XScale', 'log')
         legend('Gossip is 1 times the interactions','Gossip is 2 times the interactions','Gossip is 5 times the interactions','Gossip is 10 times the interactions','Gossip is 30 times the interactions','Gossip is 50 times the interactions','Location','southeast');
         title({'Average cooperation level for different'; 'memory lenghts and amounts of gossip'; ['Partner Sel: ' upper(gossippartnertypes(i,:)) ' - Target Sel: '  upper(gossiptarget(j,:))]},'FontSize',20);
         ylabel('Proportion of Cooperation','FontSize',20);
