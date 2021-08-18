@@ -58,7 +58,7 @@ AltersOfIatT=RegLattRecall(N,mu,RegLatVct);
 
 timeknown=zeros(N,N);
 
-tic
+
 for t=1:tmax
     %clc
     %t
@@ -153,7 +153,7 @@ c=ThresholdEvolution(c,Payoff_evolutionary,AltersOfIatT); % Threshold evolution
 
 
 end
-toc
+
  
 
  %Ct=c;

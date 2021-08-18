@@ -134,36 +134,3 @@ for i=initial:final
 end
 
 
-%matlabpool close
-
-
-
-% h=figure(12);
-% variable=prop_coop;
-% toplot=mean(variable,3);
-% toplot_std=std(variable,0,3);
-% errorbar(timestheinteractions,toplot(1,:),toplot_std(1,:),'r')
-% hold on
-% errorbar(timestheinteractions,toplot(2,:),toplot_std(2,:),'b')
-% hold on
-% % errorbar(gamma,toplot(3,:),toplot_std(3,:),'k')
-% % hold on
-% % errorbar(gamma,toplot(4,:),toplot_std(4,:),'g')
-% % hold on
-% % errorbar(gamma,toplot(5,:),toplot_std(5,:),'r-.')
-% % hold on
-% % errorbar(gamma,toplot(6,:),toplot_std(6,:),'b-.')
-% % hold on
-% % errorbar(gamma,toplot(7,:),toplot_std(7,:),'k-.')
-% % hold on
-% % errorbar(gamma,toplot(8,:),toplot_std(8,:),'g-.')
-% %hold on
-% %errorbar(gamma,toplot(9,:),toplot_std(9,:),':bo','LineWidth',3)
-% xlabel('Times the Interactions','Fontsize',18)
-% ylabel('Prop Cooperation','Fontsize',18)
-% title('Proportion of Cooperative Actions','Fontsize',18)
-% legend('R_{iz}','Only Rjz','All info','Location','best');
-% saveas(h,['compare_information_mechanisms.eps'],'epsc');
-% clear variable
-% 
-% 
