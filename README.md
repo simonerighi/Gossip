@@ -47,12 +47,13 @@ VERSIONS AND DEPENDENCIES:
 Typicall install time: 1 minute
 
 DEMO
-A simple demo is available, generating the baseline results reported in Figure 1 of the main text. 
-Once the software is installed launch the script "demo.m"
+A simple demo is available, generating the baseline results reported in Figure 1 of the main text. The only difference is that - in order to make the demo faster -  only 10 simulations for each type of gossip are run.
 
-Expected output: a figure reporting the baseline results of the model (figure 1 of the main text).
+To run the demo: Once the software is installed launch the script "demo.m"
 
-typical running time on a normal computer: 10 minutes.
+Expected output: tw figure reporting (1) the baseline results of the model (figure 1 of the main text) (2) the distribution of results.
+
+Typical running time on a normal computer: 16 minutes.
 
 
 
